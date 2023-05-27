@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "0f8b94f9-345c-4c0f-b0f5-fed9007cb714",
+		"name": "crud-spring-boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25556283"
+	},
+	"item": [
+		{
+			"name": "Criar Produto Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjg3NjkyOSwiaWF0IjoxNjgyODYyNTI5fQ.XcQ6kPoGkRlYZajn5WhK8RJR4n5jvAXIHOJVD_yKHJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pizza Marguerita\",\r\n    \"description\": \"Experimente a nossa deliciosa Pizza Marguerita, feita com ingredientes frescos e de alta qualidade. Esta pizza clássica apresenta uma crosta crocante, molho de tomate suculento, queijo mussarela derretido e folhas de manjericão frescas. O sabor simples e delicioso da Marguerita é perfeito para qualquer ocasião. Peça agora e desfrute de uma fatia da Itália no conforto da sua casa!\",\r\n    \"category\": \"PIZZA\",\r\n    \"available\": true,\r\n    \"productVariations\": [\r\n        {\r\n            \"sizeName\": \"P\",\r\n            \"description\": \"6 fatias\",\r\n            \"price\": 30.00,\r\n            \"available\": true\r\n        },\r\n        {\r\n            \"sizeName\": \"M\",\r\n            \"description\": \"8 fatias\",\r\n            \"price\": 40.00,\r\n            \"available\": true\r\n        },\r\n        {\r\n            \"sizeName\": \"G\",\r\n            \"description\": \"10 fatias\",\r\n            \"price\": 50.00,\r\n            \"available\": true\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Variação do Produto Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjc4MTY5NCwiaWF0IjoxNjgyNzY3Mjk0fQ.GN9ygNSs66GkEHXk73SA4J5U_bH6ScE0q0e8Ue8VPAw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sizeName\": \"criando variação\",\r\n    \"description\": \"Criando variação\",\r\n    \"available\": false,\r\n    \"price\": 21.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/1/variation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1",
+						"variation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar Produtos Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjc3NzEwNywiaWF0IjoxNjgyNzYyNzA3fQ.AANTL3yz182ZvWMc1NRXc-48qN4ShBiFlp6ETghpnm4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pizza Marguerita\",\r\n    \"description\": \"Experimente a nossa deliciosa Pizza Marguerita, feita com ingredientes frescos e de alta qualidade. Esta pizza clássica apresenta uma crosta crocante, molho de tomate suculento, queijo mussarela derretido e folhas de manjericão frescas. O sabor simples e delicioso da Marguerita é perfeito para qualquer ocasião. Peça agora e desfrute de uma fatia da Itália no conforto da sua casa!\",\r\n    \"price\": 25.59,\r\n    \"category\": \"Pizza\",\r\n    \"productSizes\": [\r\n        {\r\n            \"sizeName\": \"P\",\r\n            \"description\": \"6 fatias\"\r\n        },\r\n        {\r\n            \"sizeName\": \"M\",\r\n            \"description\": \"8 fatias\"\r\n        },\r\n        {\r\n            \"sizeName\": \"G\",\r\n            \"description\": \"10 fatias\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Produtos por Nome Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjc4MTY5NCwiaWF0IjoxNjgyNzY3Mjk0fQ.GN9ygNSs66GkEHXk73SA4J5U_bH6ScE0q0e8Ue8VPAw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/search?name=margu",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "margu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar Produto por ID Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjg2MzcyMiwiaWF0IjoxNjgyODQ5MzIyfQ.x5gYfM3wAMpoJM1VBd5dIYAcDyLJJ3X-w7ARu2JaQMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pizza Marguerita\",\r\n    \"description\": \"Experimente a nossa deliciosa Pizza Marguerita, feita com ingredientes frescos e de alta qualidade. Esta pizza clássica apresenta uma crosta crocante, molho de tomate suculento, queijo mussarela derretido e folhas de manjericão frescas. O sabor simples e delicioso da Marguerita é perfeito para qualquer ocasião. Peça agora e desfrute de uma fatia da Itália no conforto da sua casa!\",\r\n    \"price\": 25.59,\r\n    \"category\": \"Pizza\",\r\n    \"productSizes\": [\r\n        {\r\n            \"sizeName\": \"P\",\r\n            \"description\": \"6 fatias\"\r\n        },\r\n        {\r\n            \"sizeName\": \"M\",\r\n            \"description\": \"8 fatias\"\r\n        },\r\n        {\r\n            \"sizeName\": \"G\",\r\n            \"description\": \"10 fatias\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Produto Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjg2MzcyMiwiaWF0IjoxNjgyODQ5MzIyfQ.x5gYfM3wAMpoJM1VBd5dIYAcDyLJJ3X-w7ARu2JaQMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pizza Marguerita\",\r\n    \"description\": \"Experimente a nossa deliciosa Pizza Marguerita, feita com ingredientes frescos e de alta qualidade. Esta pizza clássica apresenta uma crosta crocante, molho de tomate suculento, queijo mussarela derretido e folhas de manjericão frescas. O sabor simples e delicioso da Marguerita é perfeito para qualquer ocasião. Peça agora e desfrute de uma fatia da Itália no conforto da sua casa!\",\r\n    \"price\": 25.59,\r\n    \"category\": \"Pizza\",\r\n    \"productSizes\": [\r\n        {\r\n            \"sizeName\": \"P\",\r\n            \"description\": \"6 fatias\"\r\n        },\r\n        {\r\n            \"sizeName\": \"M\",\r\n            \"description\": \"8 fatias\"\r\n        },\r\n        {\r\n            \"sizeName\": \"G\",\r\n            \"description\": \"10 fatias\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Variação de Produto Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjg2MzcyMiwiaWF0IjoxNjgyODQ5MzIyfQ.x5gYfM3wAMpoJM1VBd5dIYAcDyLJJ3X-w7ARu2JaQMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/1/variation/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1",
+						"variation",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Produto Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjdXN0b21lckBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjc4MDQ3OCwiaWF0IjoxNjgyNzY2MDc4fQ.AcucDYaB_r9dTsOLZoRPPSiC2fsTuz0U1uc0l2bY6lE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"pizza 123\",\r\n    \"description\": \"123\",\r\n    \"available\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Variação do Produto Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjdXN0b21lckBlbWFpbC5jb20iLCJpc3MiOiJwaXp6dXJnLWFwaSIsImV4cCI6MTY4Mjc4MDQ3OCwiaWF0IjoxNjgyNzY2MDc4fQ.AcucDYaB_r9dTsOLZoRPPSiC2fsTuz0U1uc0l2bY6lE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sizeName\": \"Pizza tamanho P\",\r\n    \"description\": \"teste123456\",\r\n    \"available\": false,\r\n    \"price\": 22.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/1/variation/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1",
+						"variation",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
